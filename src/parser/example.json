@@ -1,0 +1,169 @@
+{
+  "commands": [
+    {
+      "args": null,
+      "constants": "shiny_purple",
+      "op": "constants"
+    },
+    {
+      "args": null,
+      "constants": "shiny_teal",
+      "op": "constants"
+    },
+    {
+      "args": null,
+      "constants": "dull_yellow",
+      "op": "constants"
+    },
+    {
+      "args": null,
+      "op": "push"
+    },
+    {
+      "args": [
+        250.0,
+        250.0,
+        0.0
+      ],
+      "knob": null,
+      "op": "move"
+    },
+    {
+      "args": [
+        -100.0,
+        150.0,
+        0.0,
+        80.0
+      ],
+      "constants": "shiny_purple",
+      "cs": null,
+      "op": "sphere"
+    },
+    {
+      "args": [
+        100.0,
+        150.0,
+        0.0,
+        80.0
+      ],
+      "constants": "shiny_teal",
+      "cs": null,
+      "op": "sphere"
+    },
+    {
+      "args": null,
+      "op": "push"
+    },
+    {
+      "args": [
+        "x",
+        45.0
+      ],
+      "knob": null,
+      "op": "rotate"
+    },
+    {
+      "args": [
+        "y",
+        45.0
+      ],
+      "knob": null,
+      "op": "rotate"
+    },
+    {
+      "args": [
+        -40.0,
+        40.0,
+        40.0,
+        80.0,
+        80.0,
+        80.0
+      ],
+      "constants": null,
+      "cs": null,
+      "op": "box"
+    },
+    {
+      "args": null,
+      "op": "pop"
+    },
+    {
+      "args": null,
+      "op": "push"
+    },
+    {
+      "args": [
+        0.0,
+        -150.0,
+        0.0
+      ],
+      "knob": null,
+      "op": "move"
+    },
+    {
+      "args": [
+        "x",
+        30.0
+      ],
+      "knob": null,
+      "op": "rotate"
+    },
+    {
+      "args": [
+        1.0,
+        1.0,
+        0.5
+      ],
+      "knob": null,
+      "op": "scale"
+    },
+    {
+      "args": [
+        0.0,
+        0.0,
+        0.0,
+        30.0,
+        175.0
+      ],
+      "constants": "dull_yellow",
+      "cs": null,
+      "op": "torus"
+    },
+    {
+      "args": null,
+      "op": "display"
+    },
+    {
+      "args": [
+        "face"
+      ],
+      "op": "save"
+    }
+  ],
+  "symbols": {
+    "dull_yellow": [
+      "constants",
+      {
+        "blue": [0.0, 0.0, 0.0],
+        "green": [0.3, 0.8, 0.2],
+        "red": [0.3, 0.8, 0.2]
+      }
+    ],
+    "shiny_purple": [
+      "constants",
+      {
+        "blue": [0.3, 0.2, 0.8],
+        "green": [0.3, 0.0, 0.0],
+        "red": [0.3, 0.2, 0.8]
+      }
+    ],
+    "shiny_teal": [
+      "constants",
+      {
+        "blue": [0.3, 0.2, 0.8],
+        "green": [0.3, 0.2, 0.8],
+        "red": [0.3, 0.0, 0.0]
+      }
+    ]
+  }
+}
