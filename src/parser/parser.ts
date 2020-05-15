@@ -188,7 +188,7 @@ function parseMDL(parsedMDL: ParsedMDL, edgeMatrix: EdgeMatrix, polygonMatrix: P
         Promise.all(writingToDiskPromises).then(() => {
             console.log("Converting images to gif");
             // convert to gif
-            exec(`convert -delay 10 animation/${basename}{0..${frames}}.ppm ${basename}.gif`, () => {
+            exec(`convert -delay 10 animation/${basename}{0..${frames - 1}}.ppm ${basename}.gif`, () => {
                 console.log("Displaying");
                 // display the gif
                 exec(`animate ${basename}.gif`, () => {
