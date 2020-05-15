@@ -184,8 +184,8 @@ function parseMDL(parsedMDL: ParsedMDL, edgeMatrix: EdgeMatrix, polygonMatrix: P
 
     if(isAnimation){
         // turn into a gif
+        console.log("Waiting to finish writing frames to disk");
         Promise.all(writingToDiskPromises).then(() => {
-            console.log(fs.existsSync("animation/simple_5049.ppm"));
             console.log("Converting images to gif");
             // convert to gif
             exec(`convert -delay 10 animation/${basename}{0..${frames}}.ppm ${basename}.gif`, () => {
