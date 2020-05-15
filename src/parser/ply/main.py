@@ -18,5 +18,6 @@ wrapper = {
 
 print(json.dumps(wrapper))
 
-# to view what will be returned, remove comment below
-#pprint.pprint(wrapper)
+# debug mode
+if sys.argv[2] == "true":
+    pprint.pprint(wrapper)

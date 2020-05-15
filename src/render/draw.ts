@@ -1,6 +1,6 @@
 import {addEdge, addPolygon, EdgeMatrix, multiply, Point, PolygonMatrix} from "../matrix";
 
-const step = 100;
+const step = 20;
 
 type Equation = (t: number) => number;
 

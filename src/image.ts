@@ -1,6 +1,6 @@
 import {Edge, EdgeMatrix, PolygonMatrix} from "./matrix";
 import {exec} from "child_process";
-import fs from "fs";
+import {promises as fs} from "fs";
 import {dotProduct, calculateSurfaceNormal, Vector, vectorize} from "./utility/math-utility";
 import {calculateColor, Color, SymbolColor, viewingVector} from "./render/lighting";
 
@@ -142,15 +142,19 @@ export default class Image {
      * characters following the first "." character found in fileName.
      * @param fileName
      */
-    public saveToDisk(fileName: string){
+    public async saveToDisk(fileName: string){
         // create a temporary .ppm file so we can convert it to the file type requested
         const ppmFile = fileName.substring(0, fileName.indexOf(".")) + ".ppm";
-        fs.writeFileSync(ppmFile, this.toString());
+        await fs.writeFile(ppmFile, this.toString());
 
         if(!fileName.endsWith(".ppm")){
             // convert to type requested (type is given by fileName)
             // and delete the temporary .ppm file after
-            exec(`convert ${ppmFile} ${fileName} && rm ${ppmFile}`);
+            await new Promise((resolve, reject) => {
+                exec(`convert ${ppmFile} ${fileName} && rm ${ppmFile}`, () => {
+                    resolve();
+                });
+            })
         }
     }
 
