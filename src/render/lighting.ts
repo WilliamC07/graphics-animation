@@ -31,9 +31,9 @@ export type Color = {
     blue: number
 }
 export const ambientLightColor: Color = {
-    red: 50,
-    green: 50,
-    blue: 50
+    red: 255,
+    green: 255,
+    blue: 255
 };
 export const pointLightColor: Color = {
     red: 255,
